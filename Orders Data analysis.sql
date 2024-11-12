@@ -1,9 +1,10 @@
 --Retrieve the first 50 rows from the orders table
-select TOP 50 * from df_orders;
+SELECT TOP 50 * FROM df_orders;
 
 
 --Retrieve detailed information about the df_orders table
 EXEC sp_help 'df_orders';
+
 
 -- The columns are having more data size like varchar(max) instead of varchar(20) and bigint instead of int. 
 -- This query alters the column data types and sizes to optimize the storage.
@@ -16,42 +17,24 @@ Go
 ALTER TABLE df_orders
 ADD CONSTRAINT PK_df_orders PRIMARY KEY (order_id);
 Go
-alter table df_orders
-alter column order_date date;
-Go
-alter table df_orders
-alter column ship_mode varchar(20);
-Go
-alter table df_orders
-alter column segment varchar(20);
-Go
-alter table df_orders
-alter column country varchar(20);
-Go
-alter table df_orders
-alter column city varchar(20);
-Go
-alter table df_orders
-alter column state varchar(20);
-Go
-alter table df_orders
-alter column postal_code varchar(20);
-Go
-alter table df_orders
-alter column region varchar(20);
-Go
-alter table df_orders
-alter column category varchar(20);
-Go
-alter table df_orders
-alter column sub_category varchar(20);
-Go
-alter table df_orders
-alter column product_id varchar(50);
-Go
-alter table df_orders
-alter column quantity int;
-Go
+ALTER TABLE df_orders
+ALTER COLUMN order_date DATE;
+GO
+ALTER TABLE df_orders
+ALTER COLUMN ship_mode VARCHAR(20);
+GO
+ALTER TABLE df_orders
+ALTER COLUMN segment VARCHAR(20);
+GO
+ALTER TABLE df_orders
+ALTER COLUMN country VARCHAR(20); 
+GO
+ALTER TABLE df_orders
+ALTER COLUMN city VARCHAR(20);
+GO
+ALTER TABLE df_orders
+ALTER COLUMN state VARCHAR(20);
+GO
 alter table df_orders
 alter column discount decimal(7,2);
 Go
@@ -61,6 +44,33 @@ Go
 alter table df_orders
 alter column profit decimal(7,2);
 Go
+ALTER TABLE df_orders
+ALTER COLUMN postal_code VARCHAR(20);
+GO
+ALTER TABLE df_orders
+ALTER COLUMN region VARCHAR(20);
+GO
+ALTER TABLE df_orders
+ALTER COLUMN category VARCHAR(20);
+GO
+ALTER TABLE df_orders
+ALTER COLUMN sub_category VARCHAR(20);
+GO
+ALTER TABLE df_orders
+ALTER COLUMN product_id VARCHAR(50);
+GO
+ALTER TABLE df_orders
+ALTER COLUMN quantity INT;
+GO
+ALTER TABLE df_orders
+ALTER COLUMN discount DECIMAL(7,2);
+GO
+ALTER TABLE df_orders
+ALTER COLUMN sale_price DECIMAL(7,2);
+GO
+ALTER TABLE df_orders
+ALTER COLUMN profit DECIMAL(7,2);
+GO
 
 
 --Retrieve detailed information about the df_orders table
